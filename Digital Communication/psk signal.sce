@@ -1,0 +1,21 @@
+//Implementation of Phase Shift Keying (PSK) Signal
+
+clc
+clear all
+f1 = input('Enter Carrier Frequency : ');
+f2 = input('Enter Frequency Pulse : ');
+t = 0:0.001:1;
+x = sin(2*3.14*f1*t);
+y = squarewave(2*3.14*f2*t);
+z = x.*y;
+subplot(3,1,1)
+plot2d(t,x)
+xtitle('Carrier Signal','Time','Amplitude')
+subplot(3,1,2)
+plot2d(t,y)
+xtitle('Modulating Signal','Time','Amplitude')
+subplot(3,1,3)
+plot2d(t,z)
+xtitle('PSK Signal','Time','Amplitude')
+//carrier freq = 30
+//freq pulse = 5
